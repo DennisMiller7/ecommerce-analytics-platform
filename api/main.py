@@ -35,3 +35,57 @@ def top_categories():
 
     df = pd.read_sql(query, engine)
     return df.to_dict(orient="records")
+
+@app.get("/summary")
+def summary():
+
+    query = """
+    SELECT
+        SUM(price) AS total_revenue,
+        COUNT(DISTINCT order_id) AS total_orders,
+        SUM(price) / COUNT(DISTINCT order_id) AS average_order_value
+    FROM ecommerce_orders;
+    """
+
+    df = pd.read_sql(query, engine)
+
+    return df.to_dict(orient="records")[0]
+
+@app.get("/monthly-revenue")
+def monthly_revenue():
+
+    query = """
+    SELECT
+        TO_CHAR(
+            DATE_TRUNC('month', order_purchase_timestamp::timestamp),
+            'YYYY-MM'
+        ) AS month,
+        COALESCE(SUM(price), 0) AS revenue
+    FROM ecommerce_orders
+    WHERE order_purchase_timestamp IS NOT NULL
+    GROUP BY month
+    ORDER BY month;
+    """
+
+    df = pd.read_sql(query, engine)
+    print(df[df["revenue"].isna()])
+
+    df = df.fillna(0)
+
+    return df.to_dict(orient="records")
+
+@app.get("/orders-by-state")
+def orders_by_state():
+
+    query = """
+    SELECT
+        customer_state,
+        COUNT(DISTINCT order_id) AS orders
+    FROM ecommerce_orders
+    GROUP BY customer_state
+    ORDER BY orders DESC;
+    """
+
+    df = pd.read_sql(query, engine)
+
+    return df.to_dict(orient="records")
