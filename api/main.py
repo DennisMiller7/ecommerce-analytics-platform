@@ -34,6 +34,7 @@ def top_categories():
     """
 
     df = pd.read_sql(query, engine)
+    df = df.fillna(0)
     return df.to_dict(orient="records")
 
 @app.get("/summary")
@@ -48,7 +49,7 @@ def summary():
     """
 
     df = pd.read_sql(query, engine)
-
+    df = df.fillna(0)
     return df.to_dict(orient="records")[0]
 
 @app.get("/monthly-revenue")
@@ -87,5 +88,5 @@ def orders_by_state():
     """
 
     df = pd.read_sql(query, engine)
-
+    df = df.fillna(0)
     return df.to_dict(orient="records")
