@@ -28,20 +28,27 @@ The project demonstrates a complete data pipeline from raw e-commerce data to in
 - Automated API tests
 - GitHub Actions CI
 
-Raw CSV
-    │
-    ▼
-ETL Pipeline
-    │
-    ▼
-PostgreSQL
-    │
-    ▼
-FastAPI
-    │
-    ▼
-Streamlit Dashboard
+## Architecture
 
+```text
+Raw CSV
+   │
+   ▼
+ETL Pipeline
+   │
+   ▼
+PostgreSQL
+   │
+   ▼
+FastAPI
+   │
+   ▼
+Streamlit Dashboard
+```
+
+## Project Structure
+
+```text
 ecommerce-analytics-platform/
 │
 ├── api/
@@ -54,6 +61,7 @@ ecommerce-analytics-platform/
 ├── Dockerfile.dashboard
 ├── docker-compose.yml
 └── README.md
+```
 
 ## Installation
 
@@ -67,8 +75,6 @@ docker compose up --build
 
 
 # 8. API
-
-Eine kleine Tabelle:
 
 | Endpoint | Beschreibung |
 |----------|--------------|
