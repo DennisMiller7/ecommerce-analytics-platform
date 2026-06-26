@@ -6,7 +6,7 @@ df = pd.read_csv(
 )
 
 engine = create_engine(
-    "postgresql://postgres:ecommerce2026@localhost:5432/ecommerce"
+    "postgresql://postgres:postgres123@localhost:5433/ecommerce"
 )
 
 df.to_sql(
