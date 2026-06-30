@@ -98,6 +98,10 @@ http://127.0.0.1:8000/docs
 | `/monthly-revenue` | Monthly revenue |
 | `/orders-by-state` | Orders grouped by state |
 
+## API Documentation
+
+![API Docs](docs/api-docs.png)
+
 ## Dashboard
 
 The Streamlit dashboard provides interactive analytics including:
@@ -107,7 +111,11 @@ The Streamlit dashboard provides interactive analytics including:
 - Top product categories
 - Orders by customer state
 
-Screenshots soon to be added
+## Dashboard Preview
+
+![Dashboard Preview](docs/dashboard1.png)
+![Dashboard Preview](docs/dashboard2.png)
+
 
 ## Running Tests
 
