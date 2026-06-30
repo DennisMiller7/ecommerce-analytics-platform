@@ -77,16 +77,16 @@ def monthly_revenue():
 
 @app.get("/orders-by-state")
 def orders_by_state():
-
     query = """
     SELECT
         customer_state,
         COUNT(DISTINCT order_id) AS orders
     FROM ecommerce_orders
     GROUP BY customer_state
-    ORDER BY orders DESC;
+    ORDER BY orders DESC, customer_state ASC;
     """
 
     df = pd.read_sql(query, engine)
     df = df.fillna(0)
+
     return df.to_dict(orient="records")

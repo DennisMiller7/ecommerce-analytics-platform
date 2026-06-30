@@ -1,0 +1,6 @@
+order_id,customer_state,product_category_name,price,order_purchase_timestamp
+order_1,SP,electronics,100.0,2024-01-10 10:00:00
+order_2,SP,books,50.0,2024-01-15 12:00:00
+order_3,RJ,electronics,200.0,2024-02-05 09:30:00
+order_4,MG,furniture,150.0,2024-02-20 16:45:00
+order_5,RJ,books,75.0,2024-03-01 08:15:00
