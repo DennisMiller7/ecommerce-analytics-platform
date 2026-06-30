@@ -1,6 +1,6 @@
 # E-Commerce Analytics Platform
 
-A data engineering and analytics platform built with Python, PostgreSQL, FastAPI, Streamlit, and Docker.
+A Dockerized data engineering and analytics platform built with Python, PostgreSQL, FastAPI, Streamlit, and GitHub Actions.
 
 The project demonstrates a complete data pipeline from raw e-commerce data to interactive analytics dashboards and REST API endpoints.
 
@@ -24,6 +24,7 @@ The project demonstrates a complete data pipeline from raw e-commerce data to in
 - PostgreSQL database
 - REST API with FastAPI
 - Interactive Streamlit dashboard
+- Integration tests with PostgreSQL
 - Dockerized application
 - Automated API tests
 - GitHub Actions CI
@@ -57,6 +58,7 @@ ecommerce-analytics-platform/
 ├── data/
 ├── etl/
 ├── tests/
+├── .github/
 ├── Dockerfile
 ├── Dockerfile.dashboard
 ├── docker-compose.yml
@@ -73,19 +75,41 @@ cd ecommerce-analytics-platform
 docker compose up --build
 ```
 
+After the containers have started:
 
-# 8. API
+Dashboard:
+```text
+http://127.0.0.1:8501
+```
+
+FastAPI Docs:
+```text
+http://127.0.0.1:8000/docs
+```
+
+
+## API Endpoints
 
 | Endpoint | Beschreibung |
 |----------|--------------|
+| `/` | API status |
 | `/summary` | KPI summary |
 | `/top-categories` | Top product categories |
 | `/monthly-revenue` | Monthly revenue |
 | `/orders-by-state` | Orders grouped by state |
 
-# 9. Dashboard
+## Dashboard
 
-# 10. Tests
+The Streamlit dashboard provides interactive analytics including:
+
+- Revenue KPIs
+- Monthly revenue trends
+- Top product categories
+- Orders by customer state
+
+Screenshots soon to be added
+
+## Running Tests
 
 ```md
 ## Running Tests
