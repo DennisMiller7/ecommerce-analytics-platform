@@ -116,12 +116,7 @@ The Streamlit dashboard provides interactive analytics including:
 ![Dashboard Preview](docs/dashboard1.png)
 ![Dashboard Preview](docs/dashboard2.png)
 
-
 ## Running Tests
-
-```md
-## Running Tests
-```
 
 ```bash
 python -m pytest tests
